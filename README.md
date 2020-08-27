@@ -10,6 +10,11 @@ TLDR: We study the architecture of neural networks through the lens of network s
 
 We define a novel graph-based representation of neural networks called *relational graph*, as opposed to the commonly used *computational graph*. We then systematically investigate how does the graph structure of neural networks affect their predictive performance. The key finding is that a *sweet spot* of relational graphs have significantly improved predictive performance. We show that the finding is consistent across different tasks and datasets, and the discovered graphs are surprisingly similar to those of real biological neural networks. Please turn to our [paper](https://arxiv.org/abs/2007.06559) for more details.
 
+<div align="center">
+  <img src="docs/overview.jpg" width="1100px" />
+  <p align="center"><b>Overview of our approach.</b> Diverse neural architectures can be expressed in the language of relational graphs.</p>
+</div>
+
 ## Code setup
 
 
@@ -61,7 +66,7 @@ mkdir -p pycls/datasets/data/imagenet
 # Then download ImageNet following their official website
 ln -s path/imagenet pycls/datasets/data/imagenet # symlink
 ```
-More details are explained in [DATA.md](DATA.md).
+More details are explained in [DATA.md](docs/DATA.md).
 
 ## Run the code
 
@@ -87,6 +92,11 @@ We include an example of translating macaque and cat brain networks to MLP on CI
 ```bash
 bash launch.sh mlp_cifar10_bio best 1
 ```
+
+<div align="center">
+  <img src="docs/bio.jpg" width="450px" />
+  <p align="center">Biological neural networks and top artificial neural networks are <b>alike</b>.</p>
+</div>
 
 ### 3 Run all the models defined by relational graphs
 
@@ -116,7 +126,7 @@ jupyter notebook
 
 We want to highlight that our methodology is highly general, and we are glad to see if you would like to apply our code in different applications.
 
-### 1 Generate other experiment setups
+### 1 Generate other experimental setups
 
 We generate all the experiment setups using `yaml_gen.py`. For example, to generate configurations for MLP on CIFAR-10:
 
@@ -136,7 +146,7 @@ To do this, you can edit `def generate_index` in `pycls/models/relational_graph.
 We implement the base neural architectures, such as MLP, ResNet or EfficientNet, in `pycls/models`. You may follow an example, such as `pycls/models/resnet.py`, to see how a relational graph structure is enforced for a given base architecture. You may try out other neural architectures such as VGG, MobileNets, etc.
 
 
-### 4 Apply to other application domain
+### 4 Apply to other application domains
 
 This codebase is primarily built for image classification tasks. However, our proposed *relational graph* representation is general for many other neural networks and application domains. For example, we have tried to apply our approach to Transformer for neural machine translation tasks, and it works reasonably well, using the **[fairseq](https://github.com/pytorch/fairseq)** codebase. 
 
@@ -158,3 +168,11 @@ If you find our paper and/or our codebase useful, please consider cite our paper
   year = {2020}
 }
 ```
+
+## License
+
+**graph2nn** is released under the MIT license. Please see the [LICENSE](LICENSE) file for more information.
+
+## Contributing
+
+We actively welcome your pull requests! Please see [`CONTRIBUTING.md`](docs/CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](docs/CODE_OF_CONDUCT.md) for more info.
