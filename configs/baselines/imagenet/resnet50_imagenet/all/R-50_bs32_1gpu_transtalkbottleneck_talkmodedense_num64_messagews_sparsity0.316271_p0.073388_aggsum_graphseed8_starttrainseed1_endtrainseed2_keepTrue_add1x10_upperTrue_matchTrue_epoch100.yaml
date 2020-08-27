@@ -1,0 +1,58 @@
+BN:
+  ZERO_INIT_FINAL_GAMMA: true
+CUDNN:
+  BENCHMARK: true
+DATA_LOADER:
+  NUM_WORKERS: 4
+MODEL:
+  DEPTH: 50
+  NUM_CLASSES: 1000
+  TYPE: resnet
+NUM_GPUS: 1
+OPTIM:
+  BASE_LR: 0.025
+  LR_MULT: 0.1
+  LR_POLICY: steps
+  MAX_EPOCH: 100
+  MOMENTUM: 0.9
+  NESTEROV: true
+  STEPS:
+  - 0
+  - 30
+  - 60
+  - 90
+  WEIGHT_DECAY: 0.0001
+OUT_DIR: .
+RESNET:
+  NUM_GROUPS: 1
+  STRIDE_1X1: false
+  TRANS_FUN: talkbottleneck_transform
+  WIDTH_PER_GROUP: 64
+RGRAPH:
+  ADD_1x1: 0
+  AGG_FUNC: sum
+  DIM_LIST:
+  - 256
+  - 512
+  - 1024
+  - 2048
+  GROUP_NUM: 64
+  KEEP_GRAPH: true
+  MESSAGE_TYPE: ws
+  P: 0.073388
+  SEED_GRAPH: 8
+  SEED_TRAIN_END: 2
+  SEED_TRAIN_START: 1
+  SPARSITY: 0.316271
+  TALK_MODE: dense
+  UPPER: true
+TEST:
+  BATCH_SIZE: 25
+  DATASET: imagenet
+  SPLIT: val
+TRAIN:
+  AUTO_MATCH: true
+  BATCH_SIZE: 32
+  DATASET: imagenet
+  EVAL_PERIOD: 1
+  SPLIT: train

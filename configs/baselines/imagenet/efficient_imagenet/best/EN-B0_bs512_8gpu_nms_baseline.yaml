@@ -1,0 +1,102 @@
+BN:
+  EPS: 1.0e-05
+  MOM: 0.1
+CUDNN:
+  BENCHMARK: true
+DATA_LOADER:
+  NUM_WORKERS: 4
+EFFICIENT_NET:
+  DC_IMP: pt
+  DC_RATIO: 0.0
+  DEPTHS:
+  - 1
+  - 2
+  - 2
+  - 3
+  - 3
+  - 4
+  - 1
+  DROPOUT_RATIO: 0.0
+  EXP_RATIOS:
+  - 1
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  - 6
+  HEAD_TYPE: conv_head
+  HEAD_W: 1280
+  KERNELS:
+  - 3
+  - 3
+  - 5
+  - 3
+  - 5
+  - 5
+  - 3
+  SE_RATIO: 0.25
+  STEM_W: 32
+  STRIDES:
+  - 1
+  - 2
+  - 2
+  - 2
+  - 1
+  - 2
+  - 1
+  WIDTHS:
+  - 16
+  - 24
+  - 40
+  - 80
+  - 112
+  - 192
+  - 320
+MODEL:
+  NUM_CLASSES: 1000
+  TYPE: efficientnet
+NUM_GPUS: 8
+OPTIM:
+  BASE_LR: 0.2
+  LR_POLICY: cos
+  MAX_EPOCH: 100
+  MOMENTUM: 0.9
+  NESTEROV: true
+  STEP_SIZE: 1
+  WEIGHT_DECAY: 5.0e-05
+OUT_DIR: .
+RESNET:
+  TRANS_FUN: mbconv_transform
+RGRAPH:
+  ADD_1x1: 0
+  AGG_FUNC: sum
+  DIM_LIST:
+  - 16
+  - 24
+  - 40
+  - 80
+  - 112
+  - 192
+  - 320
+  GROUP_NUM: 16
+  KEEP_GRAPH: true
+  MESSAGE_TYPE: ws
+  P: 0.0
+  SEED_GRAPH: 1
+  SEED_TRAIN_END: 2
+  SEED_TRAIN_START: 1
+  SPARSITY: 1.0
+  TALK_MODE: dense
+  UPPER: true
+TEST:
+  BATCH_SIZE: 400
+  DATASET: imagenet
+  SPLIT: val
+TRAIN:
+  AUTO_MATCH: true
+  BATCH_SIZE: 512
+  CHECKPOINT_PERIOD: 10
+  DATASET: imagenet
+  EVAL_PERIOD: 1
+  SPLIT: train

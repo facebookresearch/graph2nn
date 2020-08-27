@@ -1,0 +1,11 @@
+networkx == 2.3
+matplotlib == 3.1.1
+yacs == 0.1.6
+pyyaml == 5.1.2
+tensorflow == 2.1.0 # optional, only if you use tensorboardx
+tensorboardx == 2.0 # optional, only if you use tensorboardx
+opencv-python == 4.2.0.34
+simplejson == 3.17.0
+scipy == 1.4.1
+seaborn == 0.9.0
+glob2 == 0.7
