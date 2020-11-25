@@ -2,7 +2,7 @@ networkx == 2.3
 matplotlib == 3.1.1
 yacs == 0.1.6
 pyyaml == 5.1.2
-tensorflow == 2.1.0 # optional, only if you use tensorboardx
+tensorflow == 2.4.0 # optional, only if you use tensorboardx
 tensorboardx == 2.0 # optional, only if you use tensorboardx
 opencv-python == 4.2.0.34
 simplejson == 3.17.0
